@@ -1,73 +1,56 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
+body {
+    background: #00008bcb;
 
-.hero {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
-    position: relative;
-    padding: 0 5%;
+}
+
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-.content {
-    text-align: center;
+.wrapper .loader {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 20px;
 }
 
-.content h1 {
-    font-size: 160px;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.5s;
+.loader .loading {
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0 10px;
+    animation: load 0.8s ease infinite;
 }
 
-.content h1:hover {
-    -webkit-text-stroke: 2px white;
-    color: transparent;
+.loader .loading.one {
+    animation-delay: 0.3s;
 }
 
-.content a {
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    font-size: 24px;
-    border: 2px solid white;
-    padding: 14px 50px;
-    margin-top: 20px;
-
+.loader .loading.two {
+    animation-delay: 0.4s;
 }
 
-.content a:hover {
-    background-color: #fff;
-    color: #000;
+.loader .loading.three {
+    animation-delay: 0.5s;
 }
 
-.back-video {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    justify-content: center;
-    z-index: -1;
-}
 
-@media (min-aspect-ratio: 16/9){
-    .back-video {
-        width: 100%;
-        height: auto;
+@keyframes load {
+    0% {
+        width: 30px;
+        height: 30px;
     }
-}
-
-@media (max-aspect-ratio: 16/9){
-    .back-video {
-        width: auto%;
-        height: 100%;
+    50% {
+        width: 20px;
+        height: 20px;
     }
 }
